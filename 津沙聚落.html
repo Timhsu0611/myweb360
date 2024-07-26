@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>津沙聚落</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+        }
+        .description p {
+            margin-bottom: 15px;
+        }
+        .description p strong {
+            font-size: 35px;
+        }
+        header {
+            background-color: #008cba;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Adjust the gap between the icon and text as needed */
+            margin-bottom: 20px; /* Add margin to adjust distance */
+        }
+        .share-buttons button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .share-buttons button:hover {
+            background-color: #005f8a;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background-color: #005f8a;
+        }
+        #result {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #E6F3FF;">
+        <div class="container-fluid">
+          <lord-icon
+            src="https://cdn.lordicon.com/aqmyxbiw.json"
+            trigger="hover"
+            style="width:100px;height:100px;">
+          </lord-icon>
+          <a class="navbar-brand" href="index.html" style="font-size: 35px;">馬祖南竿360影像地圖</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" style="font-size: 35px;">首頁                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="teach.html" style="font-size: 35px;">景點介紹</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" style="font-size: 35px;">資料來源</a>
+              </li>  
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h1 style="font-size: 35px;">津沙聚落介紹</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 10px;">
+                <div style="overflow:hidden; padding-top:75%; position:relative;">
+                    <iframe allow="fullscreen; accelerometer; gyroscope; magnetometer; vr; xr; xr-spatial-tracking; autoplay; camera; microphone" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" msallowfullscreen="true" oallowfullscreen="true" src="https://momento360.com/e/u/202384e7ceeb4241b61c6c158f012da9?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true" style="border:none; position:absolute; top:0; left:0; width:100%; height:100%;" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="share-buttons" style="margin-top: 20px; display: flex; flex-wrap: wrap;">
+                    <button onclick="shareToFacebook()" style="margin-right: 5px; margin-bottom: 5px;">分享至Facebook</button>
+                    <button onclick="shareToTwitter()" style="margin-right: 5px; margin-bottom: 5px;">分享至Twitter</button>
+                    <button onclick="shareToInstagram()" style="margin-right: 5px; margin-bottom: 5px;">分享至Instagram</button>
+                    <button onclick="copyUrl()" style="margin-bottom: 5px;">複製網址</button>
+                </div>
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4725.941709511521!2d119.9107506427775!3d26.14477341770911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3441713a57bd0d09%3A0xf5fe131b68ce513f!2z5rSl5rKZ6IGa6JC9!5e0!3m2!1szh-TW!2stw!4v1720450583480!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="description">
+            <p><strong>老酒聞名的津沙</strong></p>
+            <p style="font-size: 25px;">津沙位於雲台山下，南竿島西南方突出處的灣澳，是南竿最接近大陸第一大漁村聚落，因早先擁有如金砂般細緻的沙灘，故名金沙，後寫作津沙，是賞夕陽、踏沙灘的好去處。歷經百年風華，如今的津沙，雖然蕭瑟滄桑，被遺留下來的馬祖建築，卻仍保留古樸的美感。</p>
+            <p style="font-size: 25px;">聚落內分成澳中、東邊山、西邊山、溪底等4個區域。清末起，連江、長樂、琅岐島等地居民陸續移入，是馬祖最多原籍大陸連江縣移民的村莊。早年漁產興盛，居民除海上捕撈外，也兼營釀酒、藥鋪、商號、煙館等行業，曾是南竿第2大村；當時村內曾設有私塾，因而文風興盛。抗戰時期，日軍為控制閩江口航道進出，有一班兵力據守在西邊山的「雁廬」；而後隨著兩岸對峙，鄰近漁場又遭逢破壞，於是居民紛紛外遷。</p>
+            <p style="font-size: 25px;">今日的津沙聚落在縣政府與社區發展協會的奔走下，頹圮舊屋重現生機，蛻變成老酒館、民宿，連海邊的防空洞也改裝成廁所，並給予「碉堡便利屋」的新稱。聚落內的百年老榕樹，也是不可錯過的景緻。西邊山石階上精彩的古厝群，以及村內閒置空間的再生與活化，讓津沙成為了馬祖的魅力小鎮。</p>
+            <p style="font-size: 25px;">津沙也以老酒聞名，村中的泉水所釀出的好酒，還有紅糟入菜的各式料理，饕客絕對不能錯過。</p>
+            <br>
+        </div>
+        
+        <h2>津沙聚落知識測驗</h2>
+        <div id="quiz">
+            <div class="question-container">
+                <p class="question">津沙聚落位於哪座山下？</p>
+                <ul class="options">
+                    <li><button onclick="checkAnswer(1, false)">太武山</button></li>
+                    <li><button onclick="checkAnswer(1, true)">雲台山</button></li>
+                    <li><button onclick="checkAnswer(1, false)">五指山</button></li>
+                    <li><button onclick="checkAnswer(1, false)">南山</button></li>
+                </ul>
+            </div>
+            <div class="question-container">
+                <p class="question">津沙聚落原名為什麼？</p>
+                <ul class="options">
+                    <li><button onclick="checkAnswer(2, true)">金沙</button></li>
+                    <li><button onclick="checkAnswer(2, false)">銀沙</button></li>
+                    <li><button onclick="checkAnswer(2, false)">銅沙</button></li>
+                    <li><button onclick="checkAnswer(2, false)">鐵沙</button></li>
+                </ul>
+            </div>
+            <div class="question-container">
+                <p class="question">津沙聚落有多少個區域？</p>
+                <ul class="options">
+                    <li><button onclick="checkAnswer(3, false)">2個</button></li>
+                    <li><button onclick="checkAnswer(3, false)">3個</button></li>
+                    <li><button onclick="checkAnswer(3, true)">4個</button></li>
+                    <li><button onclick="checkAnswer(3, false)">5個</button></li>
+                </ul>
+            </div>
+            <button onclick="showResult()">提交答案</button>
+        </div>
+        <div id="result" style="display:none;">
+            <h2>測驗結果</h2>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">重新測驗</button>
+        </div>
+    </div>
+    <script>
+        function shareToFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        window.open(facebookUrl, '_blank');
+    }
+
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        window.open(twitterUrl, '_blank');
+    }
+
+    function shareToInstagram() {
+        const url = encodeURIComponent(window.location.href);
+        const instagramUrl = `https://www.instagram.com/?url=${url}`;
+        window.open(instagramUrl, '_blank');
+    }
+
+    function copyUrl() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('網址已複製');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    }
+
+    let score = 0;
+
+    function checkAnswer(questionNumber, isCorrect) {
+        if (isCorrect) {
+            score++;
+        }
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers[questionNumber - 1].style.display = 'none';
+    }
+
+    function showResult() {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+        const resultText = document.getElementById('result-text');
+        resultText.textContent = `你答對了 ${score} 題，共有 3 題。`;
+    }
+
+    function resetQuiz() {
+        score = 0;
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers.forEach(container => container.style.display = 'block');
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('result').style.display = 'none';
+    }
+    </script>
+</body>
+</html>

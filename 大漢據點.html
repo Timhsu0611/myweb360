@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>大漢據點</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+        }
+        .description p {
+            margin-bottom: 15px;
+        }
+        .description p strong {
+            font-size: 35px;
+        }
+        header {
+            background-color: #008cba;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Adjust the gap between the icon and text as needed */
+            margin-bottom: 20px; /* Add margin to adjust distance */
+        }
+        .share-buttons button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .share-buttons button:hover {
+            background-color: #005f8a;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background-color: #005f8a;
+        }
+        #result {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #E6F3FF;">
+        <div class="container-fluid">
+          <lord-icon
+            src="https://cdn.lordicon.com/aqmyxbiw.json"
+            trigger="hover"
+            style="width:100px;height:100px;">
+          </lord-icon>
+          <a class="navbar-brand" href="index.html" style="font-size: 35px;">馬祖南竿360影像地圖</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" style="font-size: 35px;">首頁                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="teach.html" style="font-size: 35px;">景點介紹</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" style="font-size: 35px;">資料來源</a>
+              </li>  
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container" style="max-width: 1200px; margin: auto; margin-top: 40px;">
+        <h1 style="font-size: 35px;">大漢據點介紹</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 10px;">
+                <div style="overflow:hidden; padding-top:75%; position:relative;">
+                    <iframe allow="fullscreen; accelerometer; gyroscope; magnetometer; vr; xr; xr-spatial-tracking; autoplay; camera; microphone" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" msallowfullscreen="true" name="資管大樓" oallowfullscreen="true" src="https://momento360.com/e/u/b7321f0d38904ef199c17207f8d05dac?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true" style="border:none; position:absolute; top:0; left:0; width:100%; height:100%;" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="share-buttons" style="margin-top: 20px; display: flex; flex-wrap: wrap;">
+                    <button onclick="shareToFacebook()" style="margin-right: 5px; margin-bottom: 5px;">分享至Facebook</button>
+                    <button onclick="shareToTwitter()" style="margin-right: 5px; margin-bottom: 5px;">分享至Twitter</button>
+                    <button onclick="shareToInstagram()" style="margin-right: 5px; margin-bottom: 5px;">分享至Instagram</button>
+                    <button onclick="copyUrl()" style="margin-bottom: 5px;">複製網址</button>
+                </div>
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8228.614144098474!2d119.92794320148677!3d26.140914923359272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3441712807581fd5%3A0x7d570926792e21fa!2z5aSn5ryi5pOa6bue!5e0!3m2!1szh-TW!2stw!4v1720450639823!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="description" style="max-width: 1200px; margin: auto;">
+        <p><strong>緊扼海疆大漢天威</strong></p>
+        <p style="font-size: 25px;">南竿遊客中心附近沿著步道行走，來到位於南竿南方鐵板海岸線上的大漢據點，與莒光島、33、46等據點控鎖著鐵板及梅石澳，形成嚴密封鎖網，控制莒光方向水道，戰略地位相當重要。1975年，基於作戰任務需要，當時陸軍登步部隊官兵弟兄不分晝夜輪流施工，因當時設備簡陋，除用炸藥爆破外，其餘均靠人力一寸一土挖掘而成，於1976年3月29日竣工。</p>
+        <p style="font-size: 25px;">據點共分3層，最上層為軍方連部，第2層設有生活圈及預備機槍陣地，最下層設有4座90高砲陣地、簡報室、中山室、庫房、儲藏室等空間；坑道寬約1.5公尺，高約2公尺，主坑道長150公尺，支坑道長為80公尺，合計230公尺。</p>
+        <p style="font-size: 25px;">隨著戰爭情勢和緩，因具有觀光發展的價值，國軍便將大漢據點移交給馬管處，2006年整修完成。走入據點內，每一處槍口、砲口均面向海洋，充滿肅殺氣息，體現了國軍當年「緊扼海疆、大漢天威」之勢；遊客可從南竿遊客中心旁步道進入，繞過據點上方，天氣好時，可以清楚的看見莒光的輪廓。</p>
+        <br>
+    </div>
+    
+    <div class="container" style="max-width: 1200px; margin: auto;">
+        <h2>大漢據點知識測驗</h2>
+        <div id="quiz">
+            <div class="question-container">
+                <p class="question">大漢據點於哪一年竣工？</p>
+                <ul class="options">
+                    <li><button onclick="checkAnswer(1, false)">1974年</button></li>
+                    <li><button onclick="checkAnswer(1, false)">1975年</button></li>
+                    <li><button onclick="checkAnswer(1, true)">1976年</button></li>
+                    <li><button onclick="checkAnswer(1, false)">1977年</button></li>
+                </ul>
+            </div>
+            <div class="question-container">
+                <p class="question">大漢據點總坑道長度是多少公尺？</p>
+                <ul class="options">
+                    <li><button onclick="checkAnswer(2, false)">210公尺</button></li>
+                    <li><button onclick="checkAnswer(2, true)">230公尺</button></li>
+                    <li><button onclick="checkAnswer(2, false)">250公尺</button></li>
+                    <li><button onclick="checkAnswer(2, false)">270公尺</button></li>
+                </ul>
+            </div>
+            <button onclick="showResult()">提交答案</button>
+        </div>
+        <div id="result" style="display:none;">
+            <h2>測驗結果</h2>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">重新測驗</button>
+        </div>
+    </div>
+    <script>
+        function shareToFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        window.open(facebookUrl, '_blank');
+    }
+
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        window.open(twitterUrl, '_blank');
+    }
+
+    function shareToInstagram() {
+        const url = encodeURIComponent(window.location.href);
+        const instagramUrl = `https://www.instagram.com/?url=${url}`;
+        window.open(instagramUrl, '_blank');
+    }
+
+    function copyUrl() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('網址已複製');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    }
+
+    let score = 0;
+
+    function checkAnswer(questionNumber, isCorrect) {
+        if (isCorrect) {
+            score++;
+        }
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers[questionNumber - 1].style.display = 'none';
+    }
+
+    function showResult() {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+        const resultText = document.getElementById('result-text');
+        resultText.textContent = `你答對了 ${score} 題，共有 2 題。`;
+    }
+
+    function resetQuiz() {
+        score = 0;
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers.forEach(container => container.style.display = 'block');
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('result').style.display = 'none';
+    }
+    </script>
+</body>
+</html>

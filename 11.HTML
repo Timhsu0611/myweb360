@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景点介绍相簿</title>
+    <style>
+        #photo-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #thumbnail-gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 100px;
+            height: 75px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #main-photo, #360-photo-container {
+            width: 80%;
+            margin-top: 20px;
+        }
+        #main-photo {
+            position: relative;
+            padding-top: 56.25%;
+            display: block;
+        }
+        #main-image {
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #360-photo-container {
+            overflow: hidden;
+            padding-top: 56.25%;
+            position: relative;
+            display: none;
+        }
+        iframe {
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #back-button {
+            display: none;
+            margin-top: 20px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo-gallery">
+        <div id="main-photo">
+            <img id="main-image" src="path/to/default-image.jpg" alt="Main Photo">
+        </div>
+        <div id="360-photo-container">
+            <iframe allow="fullscreen; accelerometer; gyroscope; magnetometer; vr; xr; xr-spatial-tracking; autoplay; camera; microphone" 
+                    allowfullscreen="true" 
+                    frameborder="0" 
+                    mozallowfullscreen="true" 
+                    msallowfullscreen="true" 
+                    name="資管大樓" 
+                    oallowfullscreen="true" 
+                    src="https://storage.net-fs.com/hosting/8149704/3/" 
+                    webkitallowfullscreen="true">
+            </iframe>
+        </div>
+        <button id="back-button" onclick="backToMainPhoto()">Back to Photos</button>
+        <div id="thumbnail-gallery">
+            <img class="thumbnail" src="path/to/image1.jpg" alt="Thumbnail 1" onclick="changeMainPhoto('path/to/image1.jpg')">
+            <img class="thumbnail" src="path/to/image2.jpg" alt="Thumbnail 2" onclick="changeMainPhoto('path/to/image2.jpg')">
+            <img class="thumbnail" src="path/to/360-thumbnail.jpg" alt="360 Photo" onclick="show360Photo()">
+        </div>
+    </div>
+
+    <script>
+        function changeMainPhoto(src) {
+            document.getElementById('main-image').src = src;
+            document.getElementById('main-photo').style.display = 'block';
+            document.getElementById('360-photo-container').style.display = 'none';
+            document.getElementById('back-button').style.display = 'none';
+        }
+
+        function show360Photo() {
+            document.getElementById('main-photo').style.display = 'none';
+            document.getElementById('360-photo-container').style.display = 'block';
+            document.getElementById('back-button').style.display = 'block';
+        }
+
+        function backToMainPhoto() {
+            document.getElementById('main-photo').style.display = 'block';
+            document.getElementById('360-photo-container').style.display = 'none';
+            document.getElementById('back-button').style.display = 'none';
+        }
+
+        // Ensure that clicking any thumbnail changes the main photo and hides the 360 container
+        document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                if (this.src.includes('360-thumbnail')) {
+                    show360Photo();
+                } else {
+                    changeMainPhoto(this.src);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

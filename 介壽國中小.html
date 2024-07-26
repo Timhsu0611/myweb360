@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>介壽國中小</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+        }
+        .description p {
+            margin-bottom: 15px;
+        }
+        .description p strong {
+            font-size: 35px;
+        }
+        header {
+            background-color: #008cba;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Adjust the gap between the icon and text as needed */
+            margin-bottom: 20px; /* Add margin to adjust distance */
+        }
+        .share-buttons button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .share-buttons button:hover {
+            background-color: #005f8a;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background-color: #005f8a;
+        }
+        #result {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #E6F3FF;">
+        <div class="container-fluid">
+            <lord-icon
+                src="https://cdn.lordicon.com/aqmyxbiw.json"
+                trigger="hover"
+                style="width:100px;height:100px;">
+            </lord-icon>
+            <a class="navbar-brand" href="index.html" style="font-size: 35px;">馬祖南竿360影像地圖</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="font-size: 35px;">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html" style="font-size: 35px;">景點介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="font-size: 35px;">資料來源</a>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="font-size: 35px;">介壽國中小介紹</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 10px;">
+                <div style="overflow:hidden; padding-top:75%; position:relative;">
+                    <iframe allow="fullscreen; accelerometer; gyroscope; magnetometer; vr; xr; xr-spatial-tracking; autoplay; camera; microphone" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" msallowfullscreen="true" oallowfullscreen="true" src="https://storage.net-fs.com/hosting/8149704/5/" style="border:none; position:absolute; top:0; left:0; width:100%; height:100%;" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="share-buttons" style="margin-top: 20px; display: flex; flex-wrap: wrap;">
+                    <button onclick="shareToFacebook()" style="margin-right: 5px; margin-bottom: 5px;">分享至Facebook</button>
+                    <button onclick="shareToTwitter()" style="margin-right: 5px; margin-bottom: 5px;">分享至Twitter</button>
+                    <button onclick="shareToInstagram()" style="margin-right: 5px; margin-bottom: 5px;">分享至Instagram</button>
+                    <button onclick="copyUrl()" style="margin-bottom: 5px;">複製網址</button>
+                </div>
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.129839202935!2d119.94547548885498!3d26.159900599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x344170f338fc342b%3A0xc2e0d1c9164040c5!2z6YCj5rGf57ij56uL5LuL5aO95ZyL5Lit5bCP5a24!5e0!3m2!1szh-TW!2stw!4v1720451410484!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="description">
+            <p><strong>連江縣立介壽國中小學</strong></p>
+            <p style="font-size: 25px;">民國38年，雄獅部隊駐守山隴地區，孫強處長(職務同今政戰主任)領導，並飭請馬上尉召集該村11、12歲之孩童識字，定名為「山隴識字班」，所教課程以三民主義為主，以山隴沙灘為紙，以小竹竿為筆，約30位孩童賴以啟蒙，是為本校之始。</p>
+            <p style="font-size: 25px;">民國39年，由朱錦華擔任負責人，在山隴舊街以戲臺板充當書桌、以水泥壁充當黑板。民國40年遷址山隴民宅上課，並由臺灣聘請3位老師，校長賴景成使用教育部審定之課本，近乎正規學校教育，唯設備仍很簡陋。</p>
+            <p style="font-size: 25px;">民國41年，建校於今社教館館址，定名為「連江縣立介壽國民學校」，第1任校長為賴景成，學校教育初奠基礎。民國49年，士紳陳聯璧等人捐地，在復興村成立中心國校，介壽與福澳、梅石分班同屬其下。</p>
+            <p style="font-size: 25px;">民國54年10月，新校舍落成(今馬中校址)，中心國校移址介壽村，更名為「連江縣立介壽中心國民學校」，原中心國校改稱復興國校。民國50年後地區實施大規模併校，原復興國校、福澳分校併入介壽中心國民學校。</p>
+            <p style="font-size: 25px;">民國65年地區推行九年國民義務教育，將介壽中心國民學校與馬祖高中代辦之國中部合併為「連江縣立介壽國民中小學」(現址)。民國80年，增設附設幼稚園；民國91年，國小部增設資源班。</p>
+            <p style="font-size: 25px;">民國101年8月，全縣實施「幼托整合」，國小附設幼稚園奉命改制為國小附設幼兒園。105年8月，幼兒園向下延伸，招收2歲以上幼兒，班級數由4班增班至9班，並於同年增設學前特教巡迴輔導班。</p>
+            <p style="font-size: 25px;">「人文閩東情，健康e世代｣、「微笑禮貌好品格，創新優質心介壽」為學校願景，以適情、適性、多元而民主的學習為目標。走進介壽校園，學生個個活潑開朗，處處洋溢著溫馨、積極進取的氣氛。在校長、家長會以及師長們努力耕耘之下，本校國中小及幼兒園在軟硬體設施和學生各領域的學習成就皆有長足的精進。硬體方面，配合老舊及危險教室的拆除，新校舍的興建將使介壽國中小逐步走向多元、健康、美化、綠化與人性化。體育及藝文風氣興盛，有角力、木球、籃球、桌球、羽球、舞龍、美術、鼓板、圍棋等社團，在歷年的縣賽、校際競賽中表現突出。甚至在全國體育、藝文競賽中嶄露頭角，更多次參與連江縣運動會獲得總統獎殊榮。學生課程學習方面，重視五育均衡發展，學習表現頻創新高，期使介壽國中小成為一所允文允武、精緻、優質的學校。</p>
+        </div>
+    </div>
+    <script>
+        function shareToFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            window.open(facebookUrl, '_blank');
+        }
+
+        function shareToTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        function shareToInstagram() {
+            const url = encodeURIComponent(window.location.href);
+            const instagramUrl = `https://www.instagram.com/?url=${url}`;
+            window.open(instagramUrl, '_blank');
+        }
+
+        function copyUrl() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('網址已複製');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

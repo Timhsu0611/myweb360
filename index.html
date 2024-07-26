@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>首頁</title>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #008cba;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .content {
+            padding: 2em;
+        }
+        .destination {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+        .destination img {
+            width: 100%;
+            height: auto;
+        }
+        .destination .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 2em);
+            margin: 1em;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .destination .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            margin: 0;
+            padding: 1em;
+            background-color: #008cba;
+            color: white;
+            text-align: center;
+        }
+        .card p {
+            padding: 1em;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 30px;
+            font-size: 25px;
+        }
+        .header-container h1 {
+            font-family: Arial, sans-serif;
+            font-size: 50px;
+            margin: 0;
+        }
+        .share-buttons button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .share-buttons button:hover {
+            background-color: #005f8a;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .options button:hover {
+            background-color: #005f8a;
+        }
+        #result {
+            text-align: center;
+        }
+        #weather {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #weather-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #weather-icon {
+            margin-left: 10px;
+        }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        iframe {
+            margin: 20px;
+        }
+        .center-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .center-container img {
+            display: inline-block;
+        }
+        .container {
+            max-width: 1500px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            max-width: 1500px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #E6F3FF;">
+        <div class="container-fluid">
+            <lord-icon
+                src="https://cdn.lordicon.com/aqmyxbiw.json"
+                trigger="hover"
+                style="width:100px;height:100px;">
+            </lord-icon>
+            <a class="navbar-brand" href="index.html" style="font-size: 40px;">馬祖南竿360影像地圖</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="font-size: 40px;">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html" style="font-size: 40px;">景點介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="font-size: 40px;">資料來源</a>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="center-container">
+    <img src="img\馬祖.jpg" usemap="#image-map">
+    <map name="image-map">
+        <area target="_blank" alt="馬祖巨神像" title="馬祖巨神像" href="馬祖巨神像.html" coords="61,416,194,435" shape="rect">
+        <area target="_blank" alt="馬港天后宮" title="馬港天后宮" href="馬港天后宮.html" coords="163,465,251,484" shape="rect">
+        <area target="_blank" alt="馬祖建碑" title="馬祖建碑" href="馬祖建碑.html" coords="186,488,285,503" shape="rect">
+        <area target="_blank" alt="中正國中小" title="中正國中小" href="中正國中小.html" coords="249,507,364,532" shape="rect">
+        <area target="_blank" alt="津沙聚落" title="津沙聚落" href="津沙聚落.html" coords="106,735,219,762" shape="rect">
+        <area target="_blank" alt="大漢據點" title="大漢據點" href="大漢據點.html" coords="481,813,577,836" shape="rect">
+        <area target="_blank" alt="北海坑道" title="北海坑道" href="北海坑道.html" coords="443,840,559,865" shape="rect">
+        <area target="_blank" alt="枕戈待旦" title="枕戈待旦" href="枕戈待旦.html" coords="679,498,784,526" shape="rect">
+        <area target="_blank" alt="介壽國中小" title="介壽國中小" href="介壽國中小.html" coords="782,446,927,477" shape="rect">
+        <area target="_blank" alt="馬祖酒廠" title="馬祖酒廠" href="馬祖酒廠.html" coords="988,416,1102,446" shape="rect">
+        <area target="_blank" alt="八八坑道" title="八八坑道" href="八八坑道.html" coords="1012,463,1081,508" shape="rect">
+    </map>
+</div>
+
+<h1 style="font-family: Arial, sans-serif; text-align: center; font-size: 50px;">馬祖南竿介紹</h1>
+
+<div class="share-buttons">
+    <button onclick="shareToFacebook()">分享至Facebook</button>
+    <button onclick="shareToTwitter()">分享至Twitter</button>
+    <button onclick="shareToInstagram()">分享至Instagram</button>
+    <button onclick="copyUrl()">複製網址</button>
+</div>
+
+<p>
+    南竿屬馬祖列島，位於台灣之西北方、福州東方的閩江口外。本鄉（南竿）為馬祖列島第一大島，舊稱「南竿塘」，面積10.64平方公里，實際居住島上的居民約四、五千人。本鄉乃連江縣政府所在地，南竿機場興建完成後，已成為馬祖海空交通、政治經濟、教育文化之中心，因此本地人皆稱南竿為「本島」。
+</p>
+
+<p>
+    本島最東邊的村落是復興村（舊稱牛角村），最西邊是四維村（舊稱西尾村），以雲台山為主脈，牛角嶺、牛背嶺等群嶺呈輻射狀四散深入海中，區隔出無數個三面環山、一面臨海的澳口聚落，如介壽、復興、福沃、清水、珠螺、四維、馬祖、津沙、仁愛等村落。其中以介壽村人口最多，也是縣治所在；福沃村的福澳港是台馬輪和離島快輪的靠泊碼頭，是馬祖的海運中心。
+</p>
+<p>
+    牛背嶺等群嶺呈輻射狀四散深入海中，區隔出無數個三面環山、一面臨海的澳口聚落，如介壽、復興、福沃、清水、珠螺、四維、馬祖、津沙、仁愛等村落。其中以介壽村人口最多，也是縣治所在；福沃村的福澳港是台馬輪和離島快輪的靠泊碼頭，是馬祖的海運中心。
+</p>
+
+<p>
+    本鄉最高的雲台山，海拔246.4公尺，為馬祖列島第二高（最高為北竿鄉壁山），但卻由於列入「台灣小百岳」之一，目前已成為本鄉的觀光景點之一，登臨山頂，可遠眺北竿列島、莒光列島與大陸河山，常令遊客留連忘返。
+</p>
+
+<p>
+    除了雲台山以外，本鄉最具知名度的景點是位在仁愛村的北海坑道，此一興建於國共對峙時期的地下坑道碼頭，工程浩大，鬼斧神工，令人嘆為觀止。此外，牛角聚落、津沙聚落、鐵堡、勝天公園、馬港天后宮、枕戈待旦、夫人村、馬祖民俗文物館，也都是本鄉著名的觀光景點。
+</p>
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57312.60687709599!2d119.90044686125516!3d26.13030624300766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3441708d34a45c6f%3A0xdd2ecb1cfd4ae6ff!2z5Y2X56u_6YSJ!5e0!3m2!1szh-TW!2stw!4v1721801709093!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div id="weather">
+        <h2>南竿鄉天氣</h2>
+        <div id="weather-info">
+            <p id="description" style="margin: 0;"></p>
+            <div id="weather-icon"></div>
+        </div>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+    </div>
+</div>
+<h2 style="text-align: center;">馬祖南竿知識測驗</h2>
+<div id="quiz">
+    <div class="question-container">
+        <p class="question">南竿島的面積是？</p>
+        <ul class="options">
+            <li><button onclick="checkAnswer(1, true)">10.64平方公里</button></li>
+            <li><button onclick="checkAnswer(1, false)">12.34平方公里</button></li>
+            <li><button onclick="checkAnswer(1, false)">8.45平方公里</button></li>
+            <li><button onclick="checkAnswer(1, false)">15.27平方公里</button></li>
+        </ul>
+    </div>
+    <div class="question-container">
+        <p class="question">本鄉最高的山是？</p>
+        <ul class="options">
+            <li><button onclick="checkAnswer(2, false)">壁山</button></li>
+            <li><button onclick="checkAnswer(2, true)">雲台山</button></li>
+            <li><button onclick="checkAnswer(2, false)">獅山</button></li>
+            <li><button onclick="checkAnswer(2, false)">五虎山</button></li>
+        </ul>
+    </div>
+    <button onclick="showResult()">提交答案</button>
+</div>
+<div id="result" style="display:none;">
+    <h2>測驗結果</h2>
+    <p id="result-text"></p>
+    <button onclick="resetQuiz()">重新測驗</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.rawgit.com/stowball/jQuery-rwdImageMaps/master/jquery.rwdImageMaps.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('img[usemap]').rwdImageMaps();
+    });
+
+    function shareToFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        window.open(facebookUrl, '_blank');
+    }
+
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        window.open(twitterUrl, '_blank');
+    }
+
+    function shareToInstagram() {
+        const url = encodeURIComponent(window.location.href);
+        const instagramUrl = `https://www.instagram.com/?url=${url}`;
+        window.open(instagramUrl, '_blank');
+    }
+
+    function copyUrl() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('網址已複製');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    }
+
+    let score = 0;
+
+    function checkAnswer(questionNumber, isCorrect) {
+        if (isCorrect) {
+            score++;
+        }
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers[questionNumber - 1].style.display = 'none';
+    }
+
+    function showResult() {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+        const resultText = document.getElementById('result-text');
+        resultText.textContent = `你答對了 ${score} 題，共有 2 題。`;
+    }
+
+    function resetQuiz() {
+        score = 0;
+        const questionContainers = document.querySelectorAll('.question-container');
+        questionContainers.forEach(container => container.style.display = 'block');
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('result').style.display = 'none';
+    }
+
+   async function getWeather() {
+    const apiKey = '881ca0cb9147f2775bcb323acedf6979';  // 替换为您的API密钥
+    const lat = 26.1525;  // 南竿乡纬度
+    const lon = 119.9326;  // 南竿乡经度
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=zh_tw`);
+    const data = await response.json();
+
+    const weatherIconContainer = document.getElementById('weather-icon');
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+
+    weatherIconContainer.innerHTML = `<img src="${iconUrl}" alt="Weather Icon">`;
+
+    document.getElementById('description').textContent = `天氣: ${data.weather[0].description}`;
+    document.getElementById('temperature').textContent = `溫度: ${data.main.temp} °C`;
+    document.getElementById('humidity').textContent = `濕度: ${data.main.humidity} %`;
+}
+
+getWeather();
+
+</script>
+
+</body>
+</html>
