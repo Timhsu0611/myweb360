@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>首頁</title>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/stowball/jQuery-rwdImageMaps/master/jquery.rwdImageMaps.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -183,6 +185,8 @@
         }
         .center-container img {
             display: inline-block;
+            max-width: 100%;
+            height: auto;
         }
         .container {
             max-width: 1500px;
@@ -314,8 +318,6 @@
     <button onclick="resetQuiz()">重新測驗</button>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.rawgit.com/stowball/jQuery-rwdImageMaps/master/jquery.rwdImageMaps.min.js"></script>
 <script>
     $(document).ready(function() {
         $('img[usemap]').rwdImageMaps();
